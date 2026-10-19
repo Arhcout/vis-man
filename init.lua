@@ -3,7 +3,7 @@ local function open_man(page)
     vis.win:map(vis.modes.NORMAL, "<Enter>", function()
         vis.win:close(true)
     end)
-    vis.win:set_syntax(nil)
+    vis.win:set_syntax("man")
 
     vis:command("<man -c " .. page)
     local content = vis.win.file:content(0, vis.win.file.size)
